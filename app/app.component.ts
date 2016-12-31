@@ -9,10 +9,13 @@ import {HighlightDirective} from './highlight.directive';
 export class MyComponent {
     public name: String;
     public today: Date;
+    public task: String;
+
     constructor() {
         this.name = 'Angular 2 Rocks !';
         this.today = new Date();
     }
+    
     sayMyName() {
         alert (this.name);
     }

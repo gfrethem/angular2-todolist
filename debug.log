@@ -1,0 +1,5 @@
+[1230/132133:ERROR:process_info.cc(372)] NtQuerySystemInformation SystemExtendedHandleInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation.  (0xc0000017)
+[1230/132134:ERROR:process_info.cc(372)] NtQuerySystemInformation SystemExtendedHandleInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation.  (0xc0000017)
+[1230/132134:ERROR:process_reader_win.cc(83)] NtQuerySystemInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation.  (0xc0000017)
+[1230/132134:ERROR:exception_snapshot_win.cc(87)] thread ID 9812 not found in process
+[1230/132134:WARNING:crash_report_exception_handler.cc(61)] ProcessSnapshotWin::Initialize failed
