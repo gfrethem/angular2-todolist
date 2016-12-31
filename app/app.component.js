@@ -1,4 +1,4 @@
-System.register(['angular2/core', './highlight.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', './highlight.directive', './task.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './highlight.directive'], function(exports_1, 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, highlight_directive_1;
+    var core_1, highlight_directive_1, task_service_1;
     var MyComponent;
     return {
         setters:[
@@ -19,12 +19,18 @@ System.register(['angular2/core', './highlight.directive'], function(exports_1, 
             },
             function (highlight_directive_1_1) {
                 highlight_directive_1 = highlight_directive_1_1;
+            },
+            function (task_service_1_1) {
+                task_service_1 = task_service_1_1;
             }],
         execute: function() {
             MyComponent = (function () {
-                function MyComponent() {
+                function MyComponent(_taskService) {
+                    this._taskService = _taskService;
                     this.name = 'Angular 2 Rocks !';
                     this.today = new Date();
+                    this.task = '';
+                    this.taskList = this._taskService.getTasks();
                 }
                 MyComponent.prototype.sayMyName = function () {
                     alert(this.name);
@@ -33,9 +39,10 @@ System.register(['angular2/core', './highlight.directive'], function(exports_1, 
                     core_1.Component({
                         selector: 'my-component',
                         templateUrl: 'app/app.component.html',
-                        directives: [highlight_directive_1.HighlightDirective]
+                        directives: [highlight_directive_1.HighlightDirective],
+                        providers: [task_service_1.TaskService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [task_service_1.TaskService])
                 ], MyComponent);
                 return MyComponent;
             }());
